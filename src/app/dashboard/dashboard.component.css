@@ -1,0 +1,28 @@
+.content {
+    background-color: #f5f8fa;
+    padding: 30px;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  
+  .section-box {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .section-title {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .arrow {
+    float: right;
+  }
+  
+  .btn-stage {
+    font-weight: bold;
+    width: 100%;
+  }
+  

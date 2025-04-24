@@ -1,0 +1,85 @@
+<div class="d-flex h-100">
+  <div class="sidebar d-flex flex-column align-items-start p-3">
+    <div class="d-flex align-items-center mb-4">
+      <img src="IMG_UNCHK.jpg" alt="Logo UNCHK" class="logo me-2" />
+      <span class="logo-text">UNCHK</span>
+    </div>
+    
+
+    <a [routerLink]="isAdmin ? '/admin/dashboard' : '/etudiant/dashboard'" routerLinkActive="active" class="mb-2 d-flex align-items-center">
+      <mat-icon class="me-2">dashboard</mat-icon>
+      Tableau de bord
+    </a>
+
+    <ng-container *ngIf="isAdmin">
+      <a routerLink="/admin/etudiants" routerLinkActive="active" class="mb-2 d-flex align-items-center">
+        <mat-icon class="me-2">groups</mat-icon>
+        Liste des étudiants
+      </a>
+      <a routerLink="/admin/formations" routerLinkActive="active" class="mb-2 d-flex align-items-center">
+        <mat-icon class="me-2">menu_book</mat-icon>
+        Liste des formations
+      </a>
+      <a routerLink="/admin/formateurs" routerLinkActive="active" class="mb-2 d-flex align-items-center">
+        <mat-icon class="me-2">person</mat-icon>
+        Liste des enseignants
+      </a>
+      <a routerLink="/admin/documents" routerLinkActive="active" class="mb-2 d-flex align-items-center">
+        <mat-icon class="me-2">folder</mat-icon>
+        Documentaire
+      </a>
+      <a routerLink="/admin/documents" routerLinkActive="active" class="mb-2 d-flex align-items-center">
+        <mat-icon class="me-2">money</mat-icon>
+         Budget
+      </a>
+      <a routerLink="/admin/parametres" routerLinkActive="active" class="mb-2 d-flex align-items-center">
+        <mat-icon class="me-2">settings</mat-icon>
+        Paramètre
+      </a>
+    </ng-container>
+
+    <ng-container *ngIf="isEtudiant">
+      <a routerLink="/etudiant/formations" routerLinkActive="active" class="mb-2 d-flex align-items-center">
+        <mat-icon class="me-2">school</mat-icon>
+        Mes cours
+      </a>
+      <a routerLink="/etudiant/documents" routerLinkActive="active" class="mb-2 d-flex align-items-center">
+        <mat-icon class="me-2">description</mat-icon>
+        Mes documents
+      </a>
+      <a routerLink="/etudiant/insertions" routerLinkActive="active" class="mb-2 d-flex align-items-center">
+        <mat-icon class="me-2">work</mat-icon>
+        Mes insertions
+      </a>
+    </ng-container>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content flex-fill p-3">
+    <div class="header d-flex justify-content-between align-items-center mb-4">
+      <mat-card class="welcome-card" appearance="outlined">
+        <mat-card-content class="d-flex align-items-center">
+          <mat-icon color="primary" class="me-2">emoji_people</mat-icon>
+          <span class="fw-bold fs-5">{{ salutation }} 👋 {{ userName }}</span>
+        </mat-card-content>
+      </mat-card>
+
+
+      <div class="dropdown user-menu">
+        <button class="btn btn-light d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <mat-icon>account_circle</mat-icon>
+          <span class="ms-2 fw-semibold">{{ userName }}</span>
+          <mat-icon class="ms-1">expand_more</mat-icon>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end mt-2 shadow-sm">
+          <li>
+            <a class="dropdown-item" [routerLink]="isAdmin ? '/admin/profile' : '/etudiant/profile'">Mon profil</a>
+          </li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item text-danger" (click)="logout()">Se déconnecter</a></li>
+        </ul>
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</div>

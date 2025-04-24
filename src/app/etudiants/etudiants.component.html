@@ -1,0 +1,48 @@
+<div  class="mb-3 text-end">
+  <a routerLink="/admin/etudiants/add" class="btn btn-primary">
+    <mat-icon class="me-1">person_add</mat-icon>
+    Ajouter un étudiant
+  </a>
+</div>
+
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Rechercher par INE" [(ngModel)]="ineRecherche"
+  (ngModelChange)="onIneChange($event)" (keyup.enter)="rechercherParIne()">
+  <button class="btn btn-primary" type="button" (click)="rechercherParIne()">Rechercher</button>
+  <button *ngIf="rechercheActive" class="btn btn-secondary ms-2" (click)="resetRecherche()">Réinitialiser</button>
+</div>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">INE</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prénom</th>
+        <th scope="col">Email</th>
+        <th scope="col">Date de Naissance</th>
+        <th scope="col">Formation</th>
+        <th scope="col">Promo</th>
+        <th scope="col">Annee de début</th>
+        <th scope="col">Annee de sortie</th>
+        <th scope="col">Diplomes</th>
+        <th scope="col">Autres Formations</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let etudiant of etudiants" (click)="goToEtudiantDetails(etudiant)" style="cursor: pointer;">
+      <th scope="row">{{ etudiant.id }}</th>
+      <td>{{ etudiant.ine }}</td>
+      <td>{{ etudiant.nom }}</td>
+      <td>{{ etudiant.prenom }}</td>
+      <td>{{ etudiant.email }}</td>
+      <td>{{ etudiant.dateNaissance | date: 'dd/MM/yyyy' }}</td>
+      <td>{{ etudiant.formation }}</td>
+      <td>{{ etudiant.promo }}</td>
+      <td>{{ etudiant.anneeDebut }}</td>
+      <td>{{ etudiant.anneeSortie }}</td>
+      <td>{{ etudiant.diplomes }}</td>
+      <td>{{ etudiant.autresFormations }}</td>
+    </tr>
+    </tbody>
+  </table>

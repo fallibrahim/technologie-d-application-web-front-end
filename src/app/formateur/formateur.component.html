@@ -1,0 +1,26 @@
+<div  class="mb-3 text-end">
+    <a  class="btn btn-primary">
+      <mat-icon class="me-1">person_add</mat-icon>
+      Ajouter un étudiant
+    </a>
+  </div>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prénom</th>
+        <th scope="col">Email</th>
+        <th scope="col">SPECIALITE</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let formateur of formateurs">
+      <th scope="row">{{ formateur.id }}</th>
+      <td>{{ formateur.nom }}</td>
+      <td>{{ formateur.prenom }}</td>
+      <td>{{ formateur.email }}</td>
+      <td>{{ formateur.specialite }}</td>
+    </tr>
+    </tbody>
+  </table>

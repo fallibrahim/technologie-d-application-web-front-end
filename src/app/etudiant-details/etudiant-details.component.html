@@ -1,0 +1,27 @@
+<div class="container mt-4" *ngIf="etudiant">
+    <div class="card">
+      <div class="card-header bg-primary text-white">
+        Détails de l'Étudiant
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{ etudiant.nom }} {{ etudiant.prenom }}</h5>
+        <p class="card-text"><strong>Email:</strong> {{ etudiant.email }}</p>
+        <p class="card-text"><strong>INE:</strong> {{ etudiant.ine }}</p>
+        <p class="card-text"><strong>Date de naissance:</strong> {{ etudiant.dateNaissance | date: 'dd/MM/yyyy' }}</p>
+        <p class="card-text"><strong>Formation:</strong> {{ etudiant.formation }}</p>
+        <p class="card-text"><strong>Promo:</strong> {{ etudiant.promo }}</p>
+        <p class="card-text"><strong>Année de début:</strong> {{ etudiant.anneeDebut }}</p>
+        <p class="card-text"><strong>Année de sortie:</strong> {{ etudiant.anneeSortie }}</p>
+        <p class="card-text"><strong>Diplômes:</strong> {{ etudiant.diplomes }}</p>
+        <p class="card-text"><strong>Autres Formations:</strong> {{ etudiant.autresFormations }}</p>
+  
+      
+        <div class="mt-4">
+          <button class="btn btn-warning me-2" (click)="editEtudiant()">Modifier</button>
+          <button class="btn btn-danger" (click)="deleteEtudiant()">Supprimer</button>
+          <a routerLink="/admin/etudiants" class="btn btn-secondary ms-2">Retour à la liste</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  

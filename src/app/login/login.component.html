@@ -1,0 +1,31 @@
+<div class="container-login">
+  <mat-card class="login-card">
+    <div class="text-center">
+      <img src="IMG_UNCHK.jpg" alt="Logo" class="logo">
+      <h2 class="title">SERVICE CENTRAL D'AUTHENTIFICATION</h2>
+    </div>
+
+    <form (ngSubmit)="onLogin()">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Adresse email</mat-label>
+        <mat-icon matPrefix style="color: #00A651;">mail</mat-icon>
+        <input matInput type="email" [(ngModel)]="email" name="email" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Mot de passe</mat-label>
+        <mat-icon matPrefix style="color: #00A651;">lock</mat-icon>
+        <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="motDePasse" name="motDePasse" required>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Toggle password visibility'" type="button">
+          <mat-icon style="color: #00A651;">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <div *ngIf="errorMessage" class="error-message">
+        <p>{{ errorMessage }}</p>
+      </div>
+
+      <button mat-raised-button class="btn-submit text-white" [disabled]="!email || !motDePasse">Connexion</button>
+    </form>
+  </mat-card>
+</div>

@@ -1,0 +1,107 @@
+:host {
+    height: 100%;
+  }
+  
+  .sidebar {
+    height: 100vh;
+    background-color: #1c2833;
+    color: white;
+    padding: 20px;
+    min-width: 200px;
+  
+    .logo {
+      width: 100px;
+      margin-bottom: 20px;
+    }
+  
+    a {
+      display: block;
+      padding: 10px 0;
+      color: white;
+      text-decoration: none;
+  
+      &.active,
+      &:hover {
+        color: #00bfff;
+      }
+    }
+  }
+  
+  .content {
+    background-color: #f5f8fa;
+    padding: 30px;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  
+  .section-box {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .section-title {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .arrow {
+    float: right;
+  }
+  
+  .btn-stage {
+    font-weight: bold;
+    width: 100%;
+  }
+  .welcome-card {
+    background-color: #f5f5f5;
+    border-radius: 12px;
+    padding: 12px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  .sidebar {
+    /* width: 250px;
+    background-color: #1a1f36;
+    min-height: 100vh;
+    padding: 20px;
+    color: white; */
+    
+    background-color: #2c3e50; /* couleur foncée par exemple */
+    color: white;
+      width: 250px;
+      padding: 1rem;
+  
+    
+  
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      &:hover, &.active {
+        color: #2196f3;
+      }
+    }
+  }
+  .logo-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #2c3e50;
+  }
+
+  .logo {
+    background-color: #2c3e50; /* identique à .sidebar */
+    padding: 0.5rem;
+    border-radius: 8px; /* facultatif pour des coins arrondis */
+    width: 100px; /* ajuste selon ton design */
+    object-fit: contain;
+  }
+  
+  
+  
+  

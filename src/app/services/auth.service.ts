@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { UserLogin } from '../models/userLogin';
+import { UserRegister } from '../models/userRegister';
 
 @Injectable({
   providedIn: 'root'
@@ -14,12 +16,12 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  login(credentials: { email: string; motDePasse: string }): Observable<{ token: string }> {
-    return this.http.post<{ token: string }>(`${this.apiUrl}/login`, credentials);
+  login( userLogin : UserLogin): Observable<{ token: string }> {
+    return this.http.post<{ token: string }>(`${this.apiUrl}/login`, userLogin);
   }
 
-  register(data: { nom: string; email: string; motDePasse: string; role: string }): Observable<{ token: string }> {
-    return this.http.post<{ token: string }>(`${this.apiUrl}/register`, data);
+  register(UserRegister : UserRegister): Observable<{ token: string }> {
+    return this.http.post<{ token: string }>(`${this.apiUrl}/register`, UserRegister);
   }
 
   saveToken(token: string): void {

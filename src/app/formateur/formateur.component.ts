@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Formateur } from '../models/formateur';
 import { FormateurService } from '../services/formateur.service';
+import { Subscription } from 'rxjs/internal/Subscription';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formateur',
@@ -10,8 +12,9 @@ import { FormateurService } from '../services/formateur.service';
 })
 export class FormateurComponent implements OnInit {
   formateurs : Formateur[] = [];
+   private roleSubscription!: Subscription;
 
-  constructor(private formateurService : FormateurService) { }
+  constructor(private formateurService : FormateurService,private router : Router) { }
 
   ngOnInit(): void {
     this.formateurService.getFormateurs().subscribe({
@@ -25,6 +28,10 @@ export class FormateurComponent implements OnInit {
         console.log('Formateurs fetched successfully');
       }
     })
+  }
+
+  gotoFormateurDetails(formateur : Formateur): void {
+     this.router.navigateByUrl(`/admin/formateurs/${formateur.id}`);
   }
   
 }

@@ -1,0 +1,50 @@
+<div class="container mt-4" *ngIf="form">
+<div class="container mt-4">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <mat-card>
+        <mat-card-title>Ajouter Formateur</mat-card-title>
+        <mat-card-content>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Nom</mat-label>
+                <input matInput formControlName="nom" />
+              </mat-form-field>
+            </div>
+            <div class="col-md-6 mb-3">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Prénom</mat-label>
+                <input matInput formControlName="prenom" />
+              </mat-form-field>
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" />
+              </mat-form-field>
+            </div>
+            <div class="col-md-6 mb-3">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Spécialite</mat-label>
+                <input matInput formControlName="specialite" />
+              </mat-form-field>
+            </div>
+          </div>
+        </mat-card-content>
+  
+        <mat-card-actions>
+          <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Enregistrer</button>
+          <button mat-button type="button" routerLink="/admin/formateurs">Annuler</button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+  </div>
+</div>
+  
+ 
+  
+
+  

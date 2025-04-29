@@ -29,7 +29,7 @@ export class LoginComponent {
         console.log("🎫 Token décodé :", decoded);
   
         const role = this.authService.getRole();
-        console.log("🧑‍💼 Rôle extrait :", role);
+        console.log("🧑‍💼 Rôle extrait :", role); 
   
         if (role === 'ADMIN') {
           this.router.navigate(['/admin/dashboard']);

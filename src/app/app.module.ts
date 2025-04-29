@@ -28,6 +28,12 @@ import { MatCardModule } from '@angular/material/card';
 import { EtudiantDetailsComponent } from './etudiant-details/etudiant-details.component';
 import { EditEtudiantComponent } from './edit-etudiant/edit-etudiant.component';
 import { AddEtudiantComponent } from './add-etudiant/add-etudiant.component';
+import { DetailFormationComponent } from './detail-formation/detail-formation.component';
+import { AddFormationComponent } from './add-formation/add-formation.component';
+import { EditFormationComponent } from './edit-formation/edit-formation.component';
+import { DetailFormateurComponent } from './detail-formateur/detail-formateur.component';
+import { AddFormateurComponent } from './add-formateur/add-formateur.component';
+import { EditFormateurComponent } from './edit-formateur/edit-formateur.component';
 
 
 @NgModule({
@@ -48,7 +54,13 @@ import { AddEtudiantComponent } from './add-etudiant/add-etudiant.component';
     UnauthorizedComponent,
     EtudiantDetailsComponent,
     EditEtudiantComponent,
-    AddEtudiantComponent
+    AddEtudiantComponent,
+    DetailFormationComponent,
+    AddFormationComponent,
+    EditFormationComponent,
+    DetailFormateurComponent,
+    AddFormateurComponent,
+    EditFormateurComponent
   ],
   imports: [
     BrowserModule,

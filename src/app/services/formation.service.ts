@@ -21,4 +21,36 @@ export class FormationService {
 
     return this.http.get<Formation[]>(this.baseUrl, { headers });
   }
+
+  getFormationById(id: string): Observable<Formation> {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.get<Formation>(`${this.baseUrl}/${id}`, { headers });
+}
+  
+    createFormation(formation: Formation): Observable<Formation> {
+      const token = localStorage.getItem('token');
+      const headers = new HttpHeaders({
+        'Authorization': `Bearer ${token}`
+      });
+      return this.http.post<Formation>(this.baseUrl, formation, { headers });
+    }
+  
+    updateFormation(id: string, formation: Formation): Observable<Formation> {
+      const token = localStorage.getItem('token');
+      const headers = new HttpHeaders({
+        'Authorization': `Bearer ${token}`
+      });
+      return this.http.put<Formation>(`${this.baseUrl}/${id}`, formation, { headers });
+    }
+  
+    deleteFormation(id: string): Observable<void> {
+      const token = localStorage.getItem('token');
+      const headers = new HttpHeaders({
+        'Authorization': `Bearer ${token}`
+      });
+      return this.http.delete<void>(`${this.baseUrl}/${id}`, { headers });
+    }
 }

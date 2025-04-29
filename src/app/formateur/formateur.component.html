@@ -1,7 +1,7 @@
 <div  class="mb-3 text-end">
-    <a  class="btn btn-primary">
+    <a routerLink="/admin/formateurs/add" class="btn btn-primary">
       <mat-icon class="me-1">person_add</mat-icon>
-      Ajouter un étudiant
+      Ajouter un enseignant
     </a>
   </div>
 <table class="table table-striped">
@@ -15,7 +15,7 @@
       </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let formateur of formateurs">
+    <tr *ngFor="let formateur of formateurs" (click)="gotoFormateurDetails(formateur)">
       <th scope="row">{{ formateur.id }}</th>
       <td>{{ formateur.nom }}</td>
       <td>{{ formateur.prenom }}</td>

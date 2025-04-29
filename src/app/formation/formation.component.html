@@ -1,11 +1,17 @@
+<div class="mb-3 text-end" *ngIf="isAdmin">
+  <a routerLink="/admin/formations/add" class="btn btn-primary">
+    <mat-icon class="me-1">person_add</mat-icon>
+    Ajouter une formation
+  </a>
+</div>
 <div class="row">
-  <div class="card ms-3" style="width: 18rem;" *ngFor="let formation of formations">
+  <div class="card ms-3 mt-4" style="width: 18rem;cursor: pointer;" *ngFor="let formation of formations"   
+       (click)="isAdmin ? goToFormationDetails(formation) : null">
       <img src="IMG_UNCHK.jpg" class="card-img-top" alt="..." width="30%" height="30%">
       <div class="card-body">
         <h5 class="card-title">{{ formation.titre }}</h5>
         <p class="card-text">{{ formation.description }}</p>
         <p class="card-text">{{ formation.niveau }}</p>
       </div>
-    </div>
-
+  </div>
 </div>

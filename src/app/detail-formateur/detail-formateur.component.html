@@ -1,0 +1,18 @@
+<div class="container mt-4" *ngIf="formateur">
+    <div class="card">
+      <div class="card-header bg-primary text-white">
+        Détails de la formation
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{ formateur.nom }} {{ formateur.prenom}}</h5>
+        <p class="card-text"><strong>Email :</strong> {{ formateur.email }}</p>
+        <p class="card-text"><strong>specialite:</strong> {{ formateur.specialite }}</p>
+        <div class="mt-4">
+          <button class="btn btn-warning me-2" (click)="gotoEditFormateur()">Modifier</button>
+          <button class="btn btn-danger" (click)="deleteFormateur()">Supprimer</button>
+          <a routerLink="/admin/formations" class="btn btn-secondary ms-2" routerLink="/admin/formateurs">Retour à la liste</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,19 @@
+<div class="container mt-4" *ngIf="formation">
+    <div class="card">
+      <div class="card-header bg-primary text-white">
+        Détails de la formation
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{ formation.titre }}</h5>
+        <p class="card-text"><strong>Titre:</strong> {{ formation.titre }}</p>
+        <p class="card-text"><strong>Description:</strong> {{ formation.description }}</p>
+        <p class="card-text"><strong>niveau:</strong> {{ formation.niveau }}</p>
+        <div class="mt-4">
+          <button class="btn btn-warning me-2" (click)="editFormation()">Modifier</button>
+          <button class="btn btn-danger" (click)="deleteFormation()">Supprimer</button>
+          <a routerLink="/admin/formations" class="btn btn-secondary ms-2">Retour à la liste</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
